@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Facebook from "./Component/LoginPage/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           Learn ReactJs
         </a>
       </header>
+      <Facebook />
     </div>
   );
 }
