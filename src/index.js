@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {Router ,Route, Switch, Redirect} from 'react-router-dom';
+import { createBrowserHistory } from "history";
+// import { Provider } from 'react-redux';
+import AdminPage from "./Layouts/Admin/AdminPage";
+import "./assets/scss/black-dashboard-react.scss";
+import "./assets/css/nucleo-icons.css";
+const history = createBrowserHistory();
+{/*<Provider store = {store}></Provider>*/}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Router history = {history}>
+    <Switch>
+      {/*<App />*/}
+      <Route path="/admin" render={props => <AdminPage {...props}/>} />
+      <Redirect from='/' to='/admin/dashboard'  render={props => <AdminPage {...props}/>} />
+    </Switch>
+  </Router>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+  , document.getElementById('root'));
