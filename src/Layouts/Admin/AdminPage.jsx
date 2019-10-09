@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import AdminNavbar from "../../Component/Navbar/AdminNavbar";
-import {Route, Switch} from "react-router-dom";
+import React, { Component } from 'react';
+import AdminNavbar from '../../Component/Navbar/AdminNavbar';
+import { Route, Switch } from 'react-router-dom';
 import routes from '../../routes';
-import PerfectScrollbar from "perfect-scrollbar";
-import Sidebar from "../../Component/Sidebar/Sidebar";
-import Footer from "../../Component/Footer/Footer";
+import PerfectScrollbar from 'perfect-scrollbar';
+import Sidebar from '../../Component/Sidebar/Sidebar';
+import Footer from '../../Component/Footer/Footer';
 
 let ps;
 
@@ -12,19 +12,19 @@ class AdminPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebarOpened:
-        document.documentElement.className.indexOf("nav-open") !== -1,
-      backgroundColor: "blue",
-    }
+      sidebarOpened: document.documentElement.className.indexOf('nav-open') !== -1,
+      backgroundColor: 'blue',
+      userInfo: {}
+    };
   }
 
   // style scroll-bar
   componentDidMount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      document.documentElement.className += " perfect-scrollbar-on";
-      document.documentElement.classList.remove("perfect-scrollbar-off");
-      ps = new PerfectScrollbar(this.refs.mainPanel, {suppressScrollX: true});
-      let tables = document.querySelectorAll(".table-responsive");
+    if (navigator.platform.indexOf('Win') > -1) {
+      document.documentElement.className += ' perfect-scrollbar-on';
+      document.documentElement.classList.remove('perfect-scrollbar-off');
+      ps = new PerfectScrollbar(this.refs.mainPanel, { suppressScrollX: true });
+      let tables = document.querySelectorAll('.table-responsive');
       for (let i = 0; i < tables.length; i++) {
         ps = new PerfectScrollbar(tables[i]);
       }
@@ -32,31 +32,23 @@ class AdminPage extends Component {
   }
 
   componentWillUnmount() {
-
-    if (navigator.platform.indexOf("Win") > -1) {
+    if (navigator.platform.indexOf('Win') > -1) {
       ps.destroy();
-      document.documentElement.className += " perfect-scrollbar-off";
-      document.documentElement.classList.remove("perfect-scrollbar-on");
+      document.documentElement.className += ' perfect-scrollbar-off';
+      document.documentElement.classList.remove('perfect-scrollbar-on');
     }
   }
 
   // this function opens and closes the sidebar on small devices
   toggleSidebar = () => {
-    document.documentElement.classList.toggle("nav-open");
-    this.setState({sidebarOpened: !this.state.sidebarOpened});
+    document.documentElement.classList.toggle('nav-open');
+    this.setState({ sidebarOpened: !this.state.sidebarOpened });
   };
-
 
   getRoutes = routes => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
+      if (prop.layout === '/admin') {
+        return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
       } else {
         return null;
       }
@@ -69,7 +61,14 @@ class AdminPage extends Component {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return 'Brand';
+  };
+
+  //get facebook user data in localstorage
+  getUserData = () => {
+    let obj = JSON.parse(localStorage.getItem('userInfo'));
+    console.log(this.state.userInfo);
+    return obj;
   };
 
   render() {
@@ -82,14 +81,11 @@ class AdminPage extends Component {
           toggleSidebar={this.toggleSidebar}
         />
 
-
         {/*Start Navbar*/}
-        <div className="main-panel"
-             ref="mainPanel"
-             data={this.state.backgroundColor}
-        >
+        <div className="main-panel" ref="mainPanel" data={this.state.backgroundColor}>
           <AdminNavbar
             {...this.props}
+            getUserData={this.getUserData}
             toggleSidebar={this.toggleSidebar}
             sidebarOpened={this.state.sidebarOpened}
             brandText={this.getBrandText(this.props.location.pathname)}
