@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import classNames from "classnames";
+
+
 // reactstrap components
 import {
   Collapse,
@@ -19,9 +21,10 @@ class AdminNavbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: "navbar-transparent"
+      color: "navbar-transparent",
     }
   }
+
 
   render() {
     return (
@@ -68,9 +71,10 @@ class AdminNavbar extends Component {
             </button>
             <Collapse navbar
                       isOpen={this.state.collapseOpen}>
-              <Nav className="ml-auto" navbar>
-                <NavItem className='d-flex align-items-center'>
-                  <NavLink to="#pablo"  >
+              <Nav className="ml-auto"
+                   navbar>
+                <NavItem className="d-flex align-items-center">
+                  <NavLink to="#pablo">
                     Login
                   </NavLink>
                 </NavItem>
