@@ -28,7 +28,7 @@ class AdminNavbar extends Component {
     return (
       <Fragment>
         <Navbar className={classNames('navbar-absolute', this.state.color)} expand="lg">
-          <Container fuild="true">
+          <Container fluid>
             <div className="navbar-wrapper">
               <div
                 className={classNames('navbar-toggle d-inline', {

@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.wrapped-button{
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.btn-simple{
+  width: 100%;
+}
+
+.check-sign-lost, .check-sign-found{
+  position: relative;
+  bottom: 3px;
+}
+.check-sign-lost{
+  left: -50px;
+}
+.check-sign-found{
+  left: -63px;
+}
+.MuiInputBase-input{
+  color: #cdcbd2 !important;
+
+}
+.MuiSvgIcon-root{
+  fill: #cdcbd2 !important;
+
+}
+.MuiInput-underline:before{
+
+  border-bottom: 1px solid rgba(36,121,246, 0.42);
+}
+
+.MuiInput-underline{
+  border-bottom: 1px solid rgba(140,163,177, 0.42);
+}

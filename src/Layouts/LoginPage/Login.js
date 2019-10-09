@@ -46,14 +46,6 @@ export default class Login extends Component {
   };
 
   render() {
-    // let obj = JSON.parse(localStorage.getItem('userInfo'));
-    // console.log(obj);
-    // axios({
-    //   method: 'POST',
-    //   url: 'http://192.168.0.128:8000/api/auth/login',
-    //   data: { social_token: obj.accessToken }
-    // }).then(res => console.log(res));
-
     let fbContent;
     if (this.state.isLoggedIn) {
       fbContent = '';
