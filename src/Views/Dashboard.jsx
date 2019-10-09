@@ -5,7 +5,8 @@ import classNames from "classnames";
 // reactstrap components
 import {Button, Card, CardHeader, CardTitle, Col, FormGroup, Input, Label, Row} from "reactstrap";
 import LostTable from "../Component/Table/LostTable";
-
+import axios from 'axios';
+import callAPI from '../utils/apiCaller';
 // core components
 
 class Dashboard extends React.Component {
@@ -13,9 +14,20 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       bigChartData: "data1",
-      sltCity: 0
+      sltCity: 0,
+      city_list: []
+
     };
   }
+  componentDidMount() {
+    callAPI("citys", "GET", null)
+      .then(res => {
+        this.setState({
+          city_list: res.data
+        })
+      });
+  }
+
 
   setBgChartData = name => {
     this.setState({
@@ -32,7 +44,15 @@ class Dashboard extends React.Component {
     });
   };
 
+  // list = (props) =>{
+  //   return(
+  //
+  //   )
+  // };
+
   render() {
+    const {city_list} = this.state;
+     console.log(city_list);
     return (
       <Fragment>
         <div className="content">
