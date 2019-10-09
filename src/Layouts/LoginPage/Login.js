@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import './Login.css';
 import Logo from './../../assets/img/brand-logo.png';
-
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import AdminPage from './../Admin/AdminPage';
+import axios from 'axios';
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -22,18 +24,36 @@ export default class Login extends Component {
   };
 
   responseFacebook = response => {
-    this.setState({
-      isLoggedIn: true,
-      accessToken: response.accessToken,
-      userId: response.id,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url
-    });
-    console.log(this.state);
+    if (!response) {
+      console.log('empty response');
+    } else {
+      this.setState({
+        isLoggedIn: true,
+        accessToken: response.accessToken,
+        userId: response.id,
+        name: response.name,
+        email: response.email,
+        picture: response.picture.data.url
+      });
+    }
+
+    localStorage.setItem('userInfo', JSON.stringify(this.state));
+
+    if (this.state.isLoggedIn === true) {
+      this.props.history.push('/admin/dashboard');
+      // return <Redirect from="/login" to="/admin/dashboard" render={props => <AdminPage {...props} />} />;
+    }
   };
 
   render() {
+    // let obj = JSON.parse(localStorage.getItem('userInfo'));
+    // console.log(obj);
+    // axios({
+    //   method: 'POST',
+    //   url: 'http://192.168.0.128:8000/api/auth/login',
+    //   data: { social_token: obj.accessToken }
+    // }).then(res => console.log(res));
+
     let fbContent;
     if (this.state.isLoggedIn) {
       fbContent = '';
@@ -61,7 +81,7 @@ export default class Login extends Component {
           <div className="login-control">
             <input type="text" name="" value="" placeholder="Password" />
           </div>
-          <input type="button" className="btn-login" name="" value="SIGN IN" />
+          <input type="button" onClick={this.getApi} className="btn-login" name="" value="SIGN IN" />
         </form>
         <div className="facebook-login">{fbContent}</div>
       </div>
