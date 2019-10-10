@@ -1,22 +1,17 @@
 import * as actionTypes from '../contants/actionsTypes';
 
-const initialState = [
+const initialState = [{
+  id: 1,
+  name_city: "Da Nang"
+},
   {
-    data_city: [{
-      id: 1,
-      name_city: "Da Nang"
-    },
-      {
-        id: 2,
-        name_city: "HCM"
-      },
-      {
-        id: 3,
-        name_city: "Ha Noi"
-      }]
-
-  }
-];
+    id: 2,
+    name_city: "HCM"
+  },
+  {
+    id: 3,
+    name_city: "Ha Noi"
+  }]
 
 
 const cityList = (state = initialState, action) => {
@@ -25,7 +20,8 @@ const cityList = (state = initialState, action) => {
       state = action.cityList;
       return [...state];
 
-    default: return [...state]
+    default:
+      return [...state]
   }
 };
 
