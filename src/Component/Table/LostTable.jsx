@@ -1,35 +1,17 @@
 import React, {Component} from 'react';
 import {Card, CardBody, CardHeader, CardTitle, Table} from "reactstrap";
-import axios from 'axios'
+import {connect} from 'react-redux';
 class LostTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listLost: [],
-      isTable: true
     }
   }
 
-  changeTable = ()=>{
-    this.setState({
-      isTable: !this.state.isTable
-    })
-  };
-  // componentDidMount() {
-  //   const url = 'http://192.168.0.128:8000/api/city';
-  //   axios({
-  //     url : url,
-  //     method: "GET",
-  //     body: null
-  //   })
-  //     // .then(result => result.json())
-  //   // get data city
-  //   //   .then(data => console.log(data.data.data_city[0].name_city))
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error))
-  // }
 
   render() {
+    const {selectCity} = this.props;
+    console.log(selectCity);
     return (
       <Card>
         <CardHeader>
@@ -66,4 +48,9 @@ class LostTable extends Component {
   }
 }
 
-export default LostTable;
+const mapStateToProp = (state)=>{
+  return{
+    selectCity : state.selectCity
+  }
+};
+export default connect(mapStateToProp, null)(LostTable);
