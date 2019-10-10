@@ -10,7 +10,6 @@ import {
   Nav,
   Navbar,
   NavbarBrand,
-  NavItem,
   NavLink,
   UncontrolledDropdown
 } from 'reactstrap';
@@ -22,6 +21,21 @@ class AdminNavbar extends Component {
       color: 'navbar-transparent'
     };
   }
+
+  toggleCollapse = () => {
+    if (this.state.collapseOpen) {
+      this.setState({
+        color: 'navbar-transparent'
+      });
+    } else {
+      this.setState({
+        color: 'bg-white'
+      });
+    }
+    this.setState({
+      collapseOpen: !this.state.collapseOpen
+    });
+  };
 
   render() {
     console.log(this.props.getuserData);
@@ -59,10 +73,6 @@ class AdminNavbar extends Component {
             </button>
             <Collapse navbar isOpen={this.state.collapseOpen}>
               <Nav className="ml-auto" navbar>
-                <NavItem className="d-flex align-items-center">
-                  <NavLink to="#pablo">Login</NavLink>
-                </NavItem>
-
                 <UncontrolledDropdown nav>
                   <DropdownToggle caret color="default" data-toggle="dropdown" nav onClick={e => e.preventDefault()}>
                     <div className="photo">
