@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import './Login.css';
 import Logo from './../../assets/img/brand-logo.png';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import AdminPage from './../Admin/AdminPage';
-import axios from 'axios';
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +35,6 @@ export default class Login extends Component {
     }
 
     localStorage.setItem('userInfo', JSON.stringify(this.state));
-
     if (this.state.isLoggedIn === true) {
       this.props.history.push('/admin/dashboard');
       // return <Redirect from="/login" to="/admin/dashboard" render={props => <AdminPage {...props} />} />;
