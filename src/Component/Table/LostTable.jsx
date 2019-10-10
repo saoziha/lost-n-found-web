@@ -1,67 +1,110 @@
-import React, {Component} from 'react';
-import {Card, CardBody, CardHeader, CardTitle, Table} from "reactstrap";
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Card, CardBody, CardTitle, CardText, Row, Col, CardImg, CardFooter } from 'reactstrap';
+import axios from 'axios';
+import callAPI from '../../utils/apiCaller';
+import { CardHeader } from '@material-ui/core';
+import './LostTable.css';
 class LostTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       listLost: [],
       isTable: true
-    }
+    };
   }
-
-  changeTable = ()=>{
+  componentDidMount() {
+    callAPI('/lost-items', 'GET', null).then(res => console.log(res.data));
+  }
+  changeTable = () => {
     this.setState({
       isTable: !this.state.isTable
-    })
+    });
   };
-  // componentDidMount() {
-  //   const url = 'http://192.168.0.128:8000/api/city';
-  //   axios({
-  //     url : url,
-  //     method: "GET",
-  //     body: null
-  //   })
-  //     // .then(result => result.json())
-  //   // get data city
-  //   //   .then(data => console.log(data.data.data_city[0].name_city))
-  //     .then(data => console.log(data))
-  //     .catch(error => console.log(error))
-  // }
 
   render() {
     return (
-      <Card>
-        <CardHeader>
-          <CardTitle tag="h4">Missing Table</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <Table className="tablesorter"
-                 responsive>
-            <thead className="text-primary">
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>City</th>
-              <th>Item Missing</th>
-              <th>Type</th>
-              <th>Time</th>
+      <div>
+        <Card className="lost-item">
+          <Row>
+            <Col xs="3" sm="4">
+              <CardHeader>
+                <CardImg src="../../assets/img/anime3.png" />
+              </CardHeader>
+            </Col>
+            <Col xs="9" sm="8">
+              <CardBody>
+                <CardTitle className="item-title">Help! I lost my son</CardTitle>
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>Dakota Rice</td>
-              <td>descript here</td>
-              <td>Wallet</td>
-              <td>Pet</td>
-              <td >$36,738</td>
-              <td>asdawd</td>
-            </tr>
-            </tbody>
-          </Table>
-        </CardBody>
-      </Card>
+                <CardText>Some quick example text to build on the card title.</CardText>
+              </CardBody>
+              <CardFooter className="item-attribute">
+                <span>
+                  <i className="tim-icons icon-compass-05" />
+                  Da Nang
+                </span>
+                <span>|</span>
+                <span>
+                  <i className="tim-icons icon-app" />
+                  Pet
+                </span>
+                <span>|</span>
+                <span>
+                  <i className="tim-icons icon-time-alarm" />
+                  25-10-2019
+                </span>
+              </CardFooter>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card className="lost-item">
+          <Row>
+            <Col xs="3" sm="4">
+              <CardHeader>
+                <CardImg src="../../assets/img/anime3.png" />
+              </CardHeader>
+            </Col>
+            <Col xs="9" sm="8">
+              <CardBody>
+                <CardTitle className="item-title">Help! I lost my son</CardTitle>
+
+                <CardText>Some quick example text to build on the card title.</CardText>
+              </CardBody>
+              <CardFooter className="item-attribute">
+                <span>Da Nang</span>
+                <span>|</span>
+                <span>Pet</span>
+                <span>|</span>
+                <span>25-10-2019</span>
+              </CardFooter>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card className="lost-item">
+          <Row>
+            <Col xs="3" sm="4">
+              <CardHeader>
+                <CardImg src="../../assets/img/anime3.png" />
+              </CardHeader>
+            </Col>
+            <Col xs="9" sm="8">
+              <CardBody>
+                <CardTitle className="item-title">Help! I lost my son</CardTitle>
+
+                <CardText>Some quick example text to build on the card title.</CardText>
+              </CardBody>
+              <CardFooter className="item-attribute">
+                <span>Da Nang</span>
+                <span>|</span>
+                <span>Pet</span>
+                <span>|</span>
+                <span>25-10-2019</span>
+              </CardFooter>
+            </Col>
+          </Row>
+        </Card>
+      </div>
     );
   }
 }
