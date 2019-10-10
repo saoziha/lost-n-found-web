@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardTitle, CardText, Row, Col, CardImg, CardFooter } from 'reactstrap';
-import axios from 'axios';
 import callAPI from '../../utils/apiCaller';
 import { CardHeader } from '@material-ui/core';
 import './LostTable.css';
+import { connect } from 'react-redux';
 class LostTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      listLost: [],
-      isTable: true
-    };
+    this.state = {};
   }
   componentDidMount() {
     callAPI('/lost-items', 'GET', null).then(res => console.log(res.data));
   }
-  changeTable = () => {
-    this.setState({
-      isTable: !this.state.isTable
-    });
-  };
 
   render() {
+    const { selectCity } = this.props;
+    console.log(selectCity);
     return (
       <div>
         <Card className="lost-item">
@@ -109,4 +103,12 @@ class LostTable extends Component {
   }
 }
 
-export default LostTable;
+const mapStateToProp = state => {
+  return {
+    selectCity: state.selectCity
+  };
+};
+export default connect(
+  mapStateToProp,
+  null
+)(LostTable);

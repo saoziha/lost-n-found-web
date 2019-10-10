@@ -18,6 +18,7 @@ code {
 
 .btn-simple{
   width: 100%;
+  padding: 15px !important;
 }
 
 .check-sign-lost, .check-sign-found{
@@ -59,3 +60,10 @@ code {
 .slt-option{
   background-color: rgb(39, 41, 61);
 }
+
+.icon-section{
+  position: relative;
+  top: -2px;
+  font-weight: bold;
+}
+
