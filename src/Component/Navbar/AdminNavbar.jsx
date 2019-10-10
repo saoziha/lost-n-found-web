@@ -1,7 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import classNames from "classnames";
-
-
 // reactstrap components
 import {
   Collapse,
@@ -12,7 +10,6 @@ import {
   Nav,
   Navbar,
   NavbarBrand,
-  NavItem,
   NavLink,
   UncontrolledDropdown
 } from "reactstrap";
@@ -25,6 +22,20 @@ class AdminNavbar extends Component {
     }
   }
 
+  toggleCollapse = () => {
+    if (this.state.collapseOpen) {
+      this.setState({
+        color: "navbar-transparent"
+      });
+    } else {
+      this.setState({
+        color: "bg-white"
+      });
+    }
+    this.setState({
+      collapseOpen: !this.state.collapseOpen
+    });
+  };
 
   render() {
     return (
@@ -73,12 +84,6 @@ class AdminNavbar extends Component {
                       isOpen={this.state.collapseOpen}>
               <Nav className="ml-auto"
                    navbar>
-                <NavItem className="d-flex align-items-center">
-                  <NavLink to="#pablo">
-                    Login
-                  </NavLink>
-                </NavItem>
-
                 <UncontrolledDropdown nav>
                   <DropdownToggle
                     caret
