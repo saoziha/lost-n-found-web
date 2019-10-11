@@ -10,7 +10,7 @@ class Footer extends Component {
             © {new Date().getFullYear()} made with{" "}
             <i className="tim-icons icon-heart-2"/> by{" "}
             <a
-              href="#"
+              href="https://github.com"
               rel="noopener noreferrer"
               target="_blank"
             >
