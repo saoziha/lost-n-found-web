@@ -7,20 +7,45 @@ import { connect } from 'react-redux';
 class LostTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      listData: []
+    };
   }
   componentDidMount() {
-    callAPI('/lost-items', 'GET', null).then(res => console.log(res.data));
+    callAPI('/lost-items', 'GET', null).then(res => {
+      this.setState({
+        listData: res.data
+      });
+    });
   }
 
   render() {
-    const { selectCity } = this.props;
-    console.log(selectCity);
+    const { listData } = this.state;
+    let listLost;
+    if (listData.length > 0) {
+      listLost = listData.map(data_lost => {
+        return (
+          <div>
+            <Col xs="3" sm="4" key={data_lost.id}>
+              <CardHeader>
+                {/* <CardImg src="../../assets/img/anime3.png" /> */}
+                {data_lost.title}
+              </CardHeader>
+            </Col>
+          </div>
+        );
+      });
+      console.log('asdasda');
+    } else {
+      console.log('empty data');
+    }
+
     return (
       <div>
         <Card className="lost-item">
           <Row>
-            <Col xs="3" sm="4">
+            {listLost}
+            {/* <Col xs="3" sm="4">
               <CardHeader>
                 <CardImg src="../../assets/img/anime3.png" />
               </CardHeader>
@@ -47,55 +72,7 @@ class LostTable extends Component {
                   25-10-2019
                 </span>
               </CardFooter>
-            </Col>
-          </Row>
-        </Card>
-
-        <Card className="lost-item">
-          <Row>
-            <Col xs="3" sm="4">
-              <CardHeader>
-                <CardImg src="../../assets/img/anime3.png" />
-              </CardHeader>
-            </Col>
-            <Col xs="9" sm="8">
-              <CardBody>
-                <CardTitle className="item-title">Help! I lost my son</CardTitle>
-
-                <CardText>Some quick example text to build on the card title.</CardText>
-              </CardBody>
-              <CardFooter className="item-attribute">
-                <span>Da Nang</span>
-                <span>|</span>
-                <span>Pet</span>
-                <span>|</span>
-                <span>25-10-2019</span>
-              </CardFooter>
-            </Col>
-          </Row>
-        </Card>
-
-        <Card className="lost-item">
-          <Row>
-            <Col xs="3" sm="4">
-              <CardHeader>
-                <CardImg src="../../assets/img/anime3.png" />
-              </CardHeader>
-            </Col>
-            <Col xs="9" sm="8">
-              <CardBody>
-                <CardTitle className="item-title">Help! I lost my son</CardTitle>
-
-                <CardText>Some quick example text to build on the card title.</CardText>
-              </CardBody>
-              <CardFooter className="item-attribute">
-                <span>Da Nang</span>
-                <span>|</span>
-                <span>Pet</span>
-                <span>|</span>
-                <span>25-10-2019</span>
-              </CardFooter>
-            </Col>
+            </Col> */}
           </Row>
         </Card>
       </div>
