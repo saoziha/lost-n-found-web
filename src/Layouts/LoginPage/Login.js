@@ -16,6 +16,15 @@ export default class Login extends Component {
     };
   }
 
+  componentDidMount() {
+    // fetch("http://5d9da8c393e57f0014a848d9.mockapi.io",{
+    //   method: "post",
+    //   body: ""
+    // }).then(result => result.json())
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err))
+  }
+
   componentClicked = () => {
     console.log('clicked');
   };
