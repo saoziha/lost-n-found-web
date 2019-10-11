@@ -9,7 +9,7 @@ const selectCity = (state = initialState, action)=>{
   switch (action.type) {
     case (actionTypes.SELECT_CITY):
       return {
-          city_id: action.id_city,
+        id_city: action.city_id,
       };
 
     default: return state
