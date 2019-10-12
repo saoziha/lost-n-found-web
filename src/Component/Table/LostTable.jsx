@@ -8,7 +8,8 @@ class LostTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allData: []
+      allData: [],
+      onSearch: true,
     }
   }
 
@@ -40,15 +41,9 @@ class LostTable extends Component {
 
   render() {
     let {selectCity, lostList, clickCategory} = this.props;
-    console.log(clickCategory);
     //search lost follow city
 
-    console.log(lostList.dataItem);
     let items = lostList.dataItem;
-
-    // if (selectCity.id_city !== "") {
-    //   console.log(lostList.filter(data => data.lost_city))
-    // }
 
 
     if (selectCity.id_city !== "") {
@@ -56,6 +51,7 @@ class LostTable extends Component {
           return lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase()) !== -1
         }
       );
+      console.log(items.length)
     }
 
     //search lost follow category
@@ -68,9 +64,10 @@ class LostTable extends Component {
     //   console.log(lostList.length);
     // }
 
+
     return (
       <div>
-        {this.listItem(lostList.dataItem)}
+        {this.listItem(items)}
       </div>
     );
   }

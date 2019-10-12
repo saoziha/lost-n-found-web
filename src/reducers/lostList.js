@@ -16,7 +16,8 @@ const lostList = (state = initialState, action) => {
   switch (action.type) {
     case (actionTypes.FETCH_LOST_LIST):
       state.dataItem = action.lostList;
-      return state;
+      // let initialData = state.dataItem;
+      return {...state};
     // case (actionTypes.FILTER_LOST):
     //   state.dataItem = action.lostList;
     //   let sltCity = action.filter;
@@ -24,17 +25,7 @@ const lostList = (state = initialState, action) => {
     //   if (sltCity !== "") {
     //     console.log(state.dataItem)
     //   }
-    // state.dataFilter = state.dataItem.filter(lost => {
-    //     return lost.lost_city.toLowerCase().indexOf(action.filter.toLowerCase()) !== -1
-    //   }
-    // );
-    //can`  filer value o day
-    // if (state.filter.city !== "") {
-    //   console.log(objtest);
-    //
-    //   console.log(state.dataFilter);
-    // }
-    // return {};
+    //       return {id_city : action.filter};
     default:
       return state;
 

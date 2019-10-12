@@ -1,10 +1,6 @@
 {
   "data-city" : [
     {
-      "city_id" : 0,
-      "city_name" : "tat ca"
-    },
-    {
       "city_id" : 1,
       "city_name" : "ho chi minh"
     },
@@ -104,6 +100,24 @@
       "lost_description": "hom nay toi buon qua, can duoc di rong choi",
       "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
       "lost_city": "ha noi",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 8,
+      "lost_title": "wallet7",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_city": "nha trang",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 9,
+      "lost_title": "wallet7",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_city": "da nang",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     }

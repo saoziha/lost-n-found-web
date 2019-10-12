@@ -25,21 +25,12 @@ class Category extends Component {
     this.props.onCategory(category);
   };
 
-  // onHandleChange = (event) => {
-  //   const target = event.target;
-  //   const name = target.name;
-  //   const value = target.type === "checkbox" ? target.checked : target.value;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-
   render() {
     return (
       <Fragment>
         <Label for="inputState">Category</Label>
         <ButtonGroup
+
           className="btn-group-toggle float-right btn-category"
           data-toggle="buttons"
         >

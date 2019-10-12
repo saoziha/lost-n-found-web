@@ -19,13 +19,8 @@ class ListCity extends Component {
     this.setState({
       [name]: value
     });
-  };
+    this.props.onFilter(value);
 
-  onFilter = (city) => {
-    const {sltCity} = this.state;
-    // id = parseInt(sltCity, 10);
-    city = sltCity;
-    this.props.onFilter(city);
   };
 
   componentDidMount() {
@@ -44,7 +39,6 @@ class ListCity extends Component {
                value={sltCity}
                className="slt-option"
                onChange={this.onHandleChange}
-               onClick={() => this.onFilter(sltCity)}
         >
           {this.sltCity(cityList)}
         </Input>
