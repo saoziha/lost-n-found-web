@@ -34,14 +34,14 @@ class LostTable extends Component {
   };
 
   render() {
-    let {selectCity, lostList, clickCategory} = this.props;
+    let {filterLost, lostList, clickCategory} = this.props;
 
-    //search lost follow city
     let items = [...lostList.dataItem];
 
-    if (selectCity.id_city) {
+    //search lost follow city
+    if (filterLost.id_city) {
       items = items.filter(lost => {
-        let filterCity = lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase());
+        let filterCity = lost.lost_city.toLowerCase().indexOf(filterLost.id_city.toLowerCase());
           return  filterCity !== -1
         }
       );
@@ -56,6 +56,17 @@ class LostTable extends Component {
       );
     }
 
+    //search lost follow keyword
+    if(filterLost.keyword){
+      items = items.filter(lost => {
+          let keywordTitle = lost.lost_title.toLowerCase().indexOf(filterLost.keyword.toLowerCase());
+          let keywordDes = lost.lost_description.toLowerCase().indexOf(filterLost.keyword.toLowerCase());
+          return  keywordTitle !== -1 || keywordDes !== -1
+        }
+      );
+    }
+
+
     return (
       <div>
         {this.listItem(items)}
@@ -67,7 +78,7 @@ class LostTable extends Component {
 const mapStateToProp = state => {
   return {
     // cityList: state.cityList,
-    selectCity: state.selectCity,
+    filterLost: state.filterLost,
     lostList: state.lostList,
     clickCategory: state.clickCategory
   };

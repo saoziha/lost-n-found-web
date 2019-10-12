@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import cityList from "./cityList";
-import selectCity from './selectCity';
+import filterLost from './filterLost';
 import lostList from './lostList'
 import clickCategory from './categoryList'
 
 const appReducers = combineReducers({
   cityList: cityList,
-  selectCity : selectCity,
+  filterLost : filterLost,
   lostList: lostList,
   clickCategory: clickCategory
 });

@@ -36,22 +36,35 @@ export const fetchDataCity = (data_city) => {
   }
 };
 
-//select city_id
-export const onFilter = (filter) => {
+//filter city_id
+export const onFilter = (id_city) => {
   return {
     type: actionTypes.FILTER_LOST,
-    filter: filter
+    payload: {
+      id_city
+    }
   }
 };
 
-//select city_id
+//filter category
 export const onCategory = (category) => {
   return {
     type: actionTypes.FILTER_LOST,
-    category: category
+    payload: {
+      category
+    }
   }
 };
 
+//filter keyword
+export const onKeyword = (keyword)=>{
+  return{
+    type: actionTypes.FILTER_LOST,
+    payload:{
+      keyword
+    }
+  }
+};
 
 //get lost list
 export const fetchLostList = (lostList) => {

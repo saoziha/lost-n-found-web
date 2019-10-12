@@ -2,7 +2,7 @@ import * as actionTypes from '../contants/actionsTypes';
 
 const initialState = {
   dataItem: [],
-
+  id_city : '',
 };
 
 const lostList = (state = initialState, action) => {

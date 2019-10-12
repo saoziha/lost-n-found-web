@@ -7,6 +7,7 @@ import { Alert, Button, Card, CardHeader, Col, FormGroup, Input, Label, Row } fr
 import LostTable from '../Component/Table/LostTable';
 import ListCity from '../Component/ListCity/ListCity';
 import Category from '../Component/Category/Category';
+import Search from "../Component/Search/Search";
 
 // core components
 
@@ -45,17 +46,10 @@ class Dashboard extends React.Component {
                     </Col>
                   </Col>
 
+                  {/*Search Component*/}
                   <Col className="text-left" xs="12" sm="12">
                     <div className="form-row">
-                      <FormGroup className="col-md-12">
-                        <Label for="inputState">Search</Label>
-                        <Input type="text" name="keyword" id="inputState" placeholder="Enter keyword..." />
-                        <Button size="small" className="btn-search">
-                          <span className="tim-icons icon-zoom-split">
-                            <i> </i>
-                          </span>
-                        </Button>
-                      </FormGroup>
+                      <Search/>
                     </div>
                   </Col>
 
@@ -67,7 +61,7 @@ class Dashboard extends React.Component {
                     </div>
                   </Col>
 
-                  {/*select option city*/}
+                  {/*Select Option City*/}
                   <Col className="text-left" xs="12" sm="12">
                     <div className="form-row">
                       <FormGroup className="col-md-12">
@@ -76,6 +70,8 @@ class Dashboard extends React.Component {
                       </FormGroup>
                     </div>
                   </Col>
+
+
                 </CardHeader>
               </Card>
             </Col>
