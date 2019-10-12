@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from './Views/Dashboard';
 import Post from './Views/Post';
 import UserProfile from './Views/UserProfile';
+import Login from "./Layouts/LoginPage/Login";
 // import Login from './Layouts/LoginPage/Login';
 
 let routes = [
@@ -32,6 +33,13 @@ let routes = [
     icon: 'tim-icons icon-single-02',
     component: () => <UserProfile />,
     layout: '/admin'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    icon: 'tim-icons icon-single-02',
+    component: () => <Login />,
+    layout: '/login'
   }
 ];
 

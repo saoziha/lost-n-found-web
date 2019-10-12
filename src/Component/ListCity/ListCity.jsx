@@ -3,12 +3,11 @@ import {Input} from "reactstrap";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
 
-
 class ListCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sltCity: 1,
+      sltCity: "",
     }
   }
 
@@ -23,23 +22,28 @@ class ListCity extends Component {
 
   onSelectCity = (id) => {
     const {sltCity} = this.state;
-    id = parseInt(sltCity, 10);
+    // id = parseInt(sltCity, 10);
+    id = sltCity;
     this.props.onSelectCity(id);
   };
 
+  componentDidMount() {
+    this.props.actionFetchDataCity()
+  }
 
 
   render() {
     const {cityList} = this.props;
-
+    const {sltCity}= this.state;
     return (
       <Fragment>
         <Input type="select"
                name="sltCity"
                id="inputState"
                value={this.state.sltCity}
+               selected
                onChange={this.onHandleChange}
-               onClick={()=>this.onSelectCity(this.state.sltCity)}
+               onClick={() => this.onSelectCity(sltCity)}
         >
           {this.sltCity(cityList)}
         </Input>
@@ -52,12 +56,11 @@ class ListCity extends Component {
     if (cityList.length > 0) {
       result = cityList.map(city => {
         return (
-          <option key={city.id}
+          <option key={city.city_id}
                   className="slt-option"
-                  value={city.id}
-
+                  value={city.city_name}
           >
-            {city.name_city}
+            {city.city_name}
           </option>
         )
       })
@@ -74,8 +77,11 @@ const mapStateToProp = (state) => {
 
 const mapDispatchToProp = (dispatch) => {
   return {
-    onSelectCity: (data_city) => {
-      dispatch(actions.onSelectCity(data_city));
+    actionFetchDataCity: () => {
+      dispatch(actions.actionFetchDataCity());
+    },
+    onSelectCity: (city_id) => {
+      dispatch(actions.onSelectCity(city_id));
     }
   }
 };

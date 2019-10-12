@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 // nodejs library that concatenates classes
-import classNames from 'classnames';
+// import classNames from 'classnames';
 // react plugin used to create charts
 // reactstrap components
-import { Alert, Button, ButtonGroup, Card, CardHeader, Col, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Alert, Button, Card, CardHeader, Col, FormGroup, Input, Label, Row } from 'reactstrap';
 import LostTable from '../Component/Table/LostTable';
-import callAPI from '../utils/apiCaller';
 import ListCity from '../Component/ListCity/ListCity';
 import Category from '../Component/Category/Category';
 
@@ -16,7 +15,9 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {};
   }
-  componentDidMount() {}
+  componentDidMount() {
+    // console.log(this.props);
+  }
 
   render() {
     return (
