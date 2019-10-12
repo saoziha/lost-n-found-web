@@ -14,7 +14,7 @@ class LostTable extends Component {
   }
 
   componentDidMount() {
-    this.props.actionFetchLostList();
+    // this.props.actionFetchLostList();
   }
 
   listItem = listLost => {
@@ -41,7 +41,7 @@ class LostTable extends Component {
     let { selectCity, lostList, clickCategory } = this.props;
     //search lost follow city
 
-    let items = lostList.dataItem;
+    let items = [...lostList.dataItem];
 
     if (selectCity.id_city !== '') {
       items = items.filter(lost => {
@@ -75,9 +75,9 @@ const mapStateToProp = state => {
 
 const mapDispatchToProp = dispatch => {
   return {
-    actionFetchLostList: () => {
-      dispatch(actions.actionFetchLostList());
-    }
+    // actionFetchLostList: () => {
+    //   dispatch(actions.actionFetchLostList());
+    // }
   };
 };
 

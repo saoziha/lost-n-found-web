@@ -7,6 +7,7 @@ import { Alert, Button, Card, CardHeader, Col, FormGroup, Input, Label, Row } fr
 import LostTable from '../Component/Table/LostTable';
 import ListCity from '../Component/ListCity/ListCity';
 import Category from '../Component/Category/Category';
+import Detail from '../Component/Detail/Detail';
 
 // core components
 
@@ -82,8 +83,9 @@ class Dashboard extends React.Component {
           </Row>
 
           <Row>
-            <Col lg="12" md="12" className='wrapped-lost'>
+            <Col lg="12" md="12" className="wrapped-lost">
               <LostTable />
+              <Detail />
             </Col>
           </Row>
         </div>

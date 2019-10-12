@@ -1,45 +1,42 @@
-import React, {Component, Fragment} from 'react';
-import {Input} from "reactstrap";
-import {connect} from 'react-redux';
+import React, { Component, Fragment } from 'react';
+import { Input } from 'reactstrap';
+import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
-
 
 class ListCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sltCity: "",
-    }
+      sltCity: ''
+    };
   }
 
-  onHandleChange = (e) => {
+  onHandleChange = e => {
     const target = e.target;
     const name = target.name;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value
     });
     this.props.onFilter(value);
-
   };
 
   componentDidMount() {
-    this.props.actionFetchDataCity()
+    this.props.actionFetchDataCity();
   }
 
-
   render() {
-    const {cityList} = this.props;
-    const {sltCity} = this.state;
+    const { cityList } = this.props;
+    const { sltCity } = this.state;
     return (
       <Fragment>
-        <Input type="select"
-               name="sltCity"
-               id="inputState"
-               value={sltCity}
-               className="slt-option"
-               onChange={this.onHandleChange}
-        >
+        <Input
+          type="select"
+          name="sltCity"
+          id="inputState"
+          value={sltCity}
+          className="slt-option"
+          onChange={this.onHandleChange}>
           {this.sltCity(cityList)}
         </Input>
       </Fragment>
@@ -49,37 +46,37 @@ class ListCity extends Component {
   sltCity(cityList) {
     let result = null;
 
-    if (cityList !== "") {
+    if (cityList !== '') {
       result = cityList.map(city => {
         return (
-          <option key={city.city_id}
-                  className="slt-option"
-                  value={city.city_name}
-          >
+          <option key={city.city_id} className="slt-option" value={city.city_name}>
             {city.city_name}
           </option>
-        )
-      })
+        );
+      });
     }
-    return result
+    return result;
   }
 }
 
-const mapStateToProp = (state) => {
+const mapStateToProp = state => {
   return {
-    cityList: state.cityList,
-  }
+    cityList: state.cityList
+  };
 };
 
-const mapDispatchToProp = (dispatch) => {
+const mapDispatchToProp = dispatch => {
   return {
     actionFetchDataCity: () => {
       dispatch(actions.actionFetchDataCity());
     },
-    onFilter: (filterValue) => {
+    onFilter: filterValue => {
       dispatch(actions.onFilter(filterValue));
     }
-  }
+  };
 };
 
-export default connect(mapStateToProp, mapDispatchToProp)(ListCity);
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(ListCity);
