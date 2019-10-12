@@ -5,11 +5,20 @@ import LostItem from "./LostItem";
 import * as actions from '../../actions/index';
 
 class LostTable extends Component {
-  // constructor(props) {super(props);}
+  constructor(props) {
+    super(props);
+    this.state = {
+      allData: []
+    }
+  }
+
+
 
   componentDidMount() {
-    this.props.actionFetchLostList()
+    this.props.actionFetchLostList();
   }
+
+
 
   listItem = (listLost) => {
     let result = null;
@@ -29,28 +38,39 @@ class LostTable extends Component {
     return result
   };
 
-  // search lost list by select city
-  onSearchCity = (selectCity, listLost) => {
-
-  };
-
-
   render() {
-    let {selectCity, lostList} = this.props;
+    let {selectCity, lostList, clickCategory} = this.props;
+    console.log(clickCategory);
+    //search lost follow city
 
-//search lost follow city
-    if (selectCity !== "") {
-      lostList = lostList.filter(lost => {
+    console.log(lostList.dataItem);
+    let items = lostList.dataItem;
+
+    // if (selectCity.id_city !== "") {
+    //   console.log(lostList.filter(data => data.lost_city))
+    // }
+
+
+    if (selectCity.id_city !== "") {
+      items = items.filter(lost => {
           return lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase()) !== -1
         }
       );
-      console.log(lostList.length);
     }
 
+    //search lost follow category
+
+    // if (!clickCategory ) {
+    //   lostList = lostList.filter(lost => {
+    //       return lost.lost_category.toLowerCase().indexOf(clickCategory.toLowerCase()) !== -1
+    //     }
+    //   );
+    //   console.log(lostList.length);
+    // }
 
     return (
       <div>
-        {this.listItem(lostList)}
+        {this.listItem(lostList.dataItem)}
       </div>
     );
   }
@@ -60,7 +80,8 @@ const mapStateToProp = state => {
   return {
     // cityList: state.cityList,
     selectCity: state.selectCity,
-    lostList: state.lostList
+    lostList: state.lostList,
+    clickCategory: state.clickCategory
   };
 };
 

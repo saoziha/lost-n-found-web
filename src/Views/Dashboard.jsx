@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
           </Row>
 
           <Row>
-            <Col lg="12" md="12">
+            <Col lg="12" md="12" className='wrapped-lost'>
               <LostTable />
             </Col>
           </Row>
