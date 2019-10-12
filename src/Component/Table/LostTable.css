@@ -1,31 +1,65 @@
 .lost-item {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 .lost-item .row {
-  flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
-.item-title {
-  font-weight: bold !important;
+
+.card-content{
+    position: relative;
+    height: 100%;
+}
+
+.card-content > .card-header > .item-title {
+    font-weight: bold !important;
+    margin-bottom: 0;
+}
+
+.card-content > .card-body {
+    padding: 5px 0 !important;
 }
 
 .card-footer {
-  padding-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 .item-attribute span {
-  width: calc(100% / 5 - 10px);
-  margin-left: 5px;
-  font-size: 10px;
+    width: calc(100% / 5 - 40px);
+    margin-left: 5px;
+    font-size: 10px;
 }
 
 .item-attribute span i {
-  height: 17px;
-  font-size: 13px;
-  margin-right: 5px;
+    height: 17px;
+    font-size: 13px;
+    margin-right: 5px;
 }
 
 .item-attribute span:first-child {
-  margin-left: 0;
+    margin-left: 0;
+}
+
+.card-text-customize:first-letter {
+    text-transform: capitalize;
+}
+
+.wrapped-lost {
+    padding: 10px;
+}
+
+.wrapped-lost > div > .card-wrapped {
+    margin-bottom: 5mm;
+    padding: 10px;
+    display: flex;
+    flex-flow: row;
+}
+
+.card-content > .card-footer {
+    display: flex;
+    padding-bottom: 0 !important;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

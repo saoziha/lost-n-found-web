@@ -12,6 +12,23 @@ export const actionFetchDataCity = () => {
   }
 };
 //get data city
+// export const fetchCategory = (category) => {
+//   return {
+//     type: actionTypes.FETCH_CATEGORY,
+//     category: category
+//   }
+// };
+//
+// export const actionFetchCategory = () => {
+//   return (dispatch) => {
+//     return callAPI('api/type', 'GET', null)
+//       .then(res => {
+//         console.log(res.data);
+//         dispatch(fetchCategory(res.data))
+//       })
+//   }
+// };
+//get data city
 export const fetchDataCity = (data_city) => {
   return {
     type: actionTypes.FETCH_CITY,
@@ -20,10 +37,18 @@ export const fetchDataCity = (data_city) => {
 };
 
 //select city_id
-export const onSelectCity = (city_id) => {
+export const onFilter = (filter) => {
   return {
-    type: actionTypes.SELECT_CITY,
-    city_id: city_id
+    type: actionTypes.FILTER_LOST,
+    filter: filter
+  }
+};
+
+//select city_id
+export const onCategory = (category) => {
+  return {
+    type: actionTypes.FILTER_LOST,
+    category: category
   }
 };
 
@@ -37,7 +62,7 @@ export const fetchLostList = (lostList) => {
 };
 
 //get lost list from api
-export const actionFetchLostList = () => {
+export const  actionFetchLostList = () => {
   return (dispatch) => {
     return callAPI('data-lost-list', 'GET', null)
       .then(res => dispatch(fetchLostList(res.data)))

@@ -1,10 +1,6 @@
 {
   "data-city" : [
     {
-      "city_id" : 0,
-      "city_name" : "da nang"
-    },
-    {
       "city_id" : 1,
       "city_name" : "ho chi minh"
     },
@@ -27,6 +23,10 @@
     {
       "city_id" : 6,
       "city_name" : "vung tau"
+    },
+    {
+      "city_id" : 7,
+      "city_name" : "da nang"
     }
 
   ],
@@ -34,8 +34,8 @@
     {
       "lost_id": 0,
       "lost_title": "wallet0",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "http://baovinhphuc.com.vn/thumbnail/550/exif_temp_image-1jpeg.jpg?url=Storage/Images/2019/3/28/exif_temp_image-1jpeg.jpg",
       "lost_city": "da nang",
       "lost_date_at": "12/2/2019",
       "lost_category": "pet"
@@ -43,8 +43,8 @@
     {
       "lost_id": 1,
       "lost_title": "wallet1",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "http://baovinhphuc.com.vn/thumbnail/550/exif_temp_image-1jpeg.jpg?url=Storage/Images/2019/3/28/exif_temp_image-1jpeg.jpg",
       "lost_city": "ho chi minh",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
@@ -52,8 +52,8 @@
     {
       "lost_id": 2,
       "lost_title": "wallet2",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2017/11/04/22/18/dog-2919014_960_720.jpg",
       "lost_city": "ha noi",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
@@ -61,8 +61,8 @@
     {
       "lost_id": 3,
       "lost_title": "wallet3",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2017/11/04/22/18/dog-2919014_960_720.jpg",
       "lost_city": "nha trang",
       "lost_date_at": "12/2/2019",
       "lost_category": "stuff"
@@ -70,18 +70,54 @@
     {
       "lost_id": 4,
       "lost_title": "wallet4",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
-      "lost_city": "hai phong",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2015/03/26/09/54/pug-690566_960_720.jpg",
+      "lost_city": "vung tau",
       "lost_date_at": "12/2/2019",
       "lost_category": "pet"
     },
     {
       "lost_id": 5,
       "lost_title": "wallet5",
-      "lost_description": "2o384yoihaodtaluisdhaiusdy",
-      "lost_image": "url",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2015/11/17/13/13/bulldog-1047518_960_720.jpg",
       "lost_city": "ha noi",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 6,
+      "lost_title": "wallet6",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2015/11/17/13/13/bulldog-1047518_960_720.jpg",
+      "lost_city": "vung tau",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 7,
+      "lost_title": "wallet7",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_city": "ha noi",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 8,
+      "lost_title": "wallet7",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_city": "nha trang",
+      "lost_date_at": "12/2/2019",
+      "lost_category": "person"
+    },
+    {
+      "lost_id": 9,
+      "lost_title": "wallet7",
+      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_city": "da nang",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     }
