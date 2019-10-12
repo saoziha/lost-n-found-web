@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Badge, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col} from "reactstrap";
+import {Badge, Button, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col} from "reactstrap";
 
 class LostItem extends Component {
 
@@ -39,7 +39,7 @@ class LostItem extends Component {
                  sm="12"
                  className="pl-0 pr-0 card-content">
               <CardHeader className="pl-0 pr-0 pt-0">
-                <CardTitle className="item-title text-capitalize">{title}</CardTitle>
+                <CardTitle className="item-title d-flex flex-row justify-content-between text-capitalize">{title}<Badge color="info">Share</Badge></CardTitle>
               </CardHeader>
               <CardBody className="pl-0 pr-0">
                 <CardText className="card-text-customize">{des}</CardText>

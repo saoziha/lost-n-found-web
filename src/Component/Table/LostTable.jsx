@@ -8,18 +8,12 @@ class LostTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allData: [],
-      onSearch: true,
     }
   }
-
-
 
   componentDidMount() {
     this.props.actionFetchLostList();
   }
-
-
 
   listItem = (listLost) => {
     let result = null;
@@ -41,29 +35,26 @@ class LostTable extends Component {
 
   render() {
     let {selectCity, lostList, clickCategory} = this.props;
+
     //search lost follow city
+    let items = [...lostList.dataItem];
 
-    let items = lostList.dataItem;
-
-
-    if (selectCity.id_city !== "") {
+    if (selectCity.id_city) {
       items = items.filter(lost => {
-          return lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase()) !== -1
+        let filterCity = lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase());
+          return  filterCity !== -1
         }
       );
-      console.log(items.length)
     }
 
     //search lost follow category
-
-    // if (!clickCategory ) {
-    //   lostList = lostList.filter(lost => {
-    //       return lost.lost_category.toLowerCase().indexOf(clickCategory.toLowerCase()) !== -1
-    //     }
-    //   );
-    //   console.log(lostList.length);
-    // }
-
+    if (clickCategory.name_category) {
+      items = items.filter(lost => {
+        let filterCategory = lost.lost_category.toLowerCase().indexOf(clickCategory.name_category.toLowerCase());
+          return  filterCategory !== -1
+        }
+      );
+    }
 
     return (
       <div>

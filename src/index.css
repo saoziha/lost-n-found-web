@@ -67,5 +67,7 @@ code {
   top: -2px;
   font-weight: bold;
 }
-
+.dropdown-toggle:after{
+  content: none !important;
+}
 
