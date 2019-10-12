@@ -7,10 +7,7 @@ import * as actions from '../../actions/index';
 class LostTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      allData: [],
-      onSearch: true
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -38,27 +35,34 @@ class LostTable extends Component {
   };
 
   render() {
-    let { selectCity, lostList, clickCategory } = this.props;
-    //search lost follow city
+    let { filterLost, lostList, clickCategory } = this.props;
 
     let items = [...lostList.dataItem];
 
-    if (selectCity.id_city !== '') {
+    //search lost follow city
+    if (filterLost.id_city) {
       items = items.filter(lost => {
-        return lost.lost_city.toLowerCase().indexOf(selectCity.id_city.toLowerCase()) !== -1;
+        let filterCity = lost.lost_city.toLowerCase().indexOf(filterLost.id_city.toLowerCase());
+        return filterCity !== -1;
       });
-      console.log(items.length);
     }
 
     //search lost follow category
+    if (clickCategory.name_category) {
+      items = items.filter(lost => {
+        let filterCategory = lost.lost_category.toLowerCase().indexOf(clickCategory.name_category.toLowerCase());
+        return filterCategory !== -1;
+      });
+    }
 
-    // if (!clickCategory ) {
-    //   lostList = lostList.filter(lost => {
-    //       return lost.lost_category.toLowerCase().indexOf(clickCategory.toLowerCase()) !== -1
-    //     }
-    //   );
-    //   console.log(lostList.length);
-    // }
+    //search lost follow keyword
+    if (filterLost.keyword) {
+      items = items.filter(lost => {
+        let keywordTitle = lost.lost_title.toLowerCase().indexOf(filterLost.keyword.toLowerCase());
+        let keywordDes = lost.lost_description.toLowerCase().indexOf(filterLost.keyword.toLowerCase());
+        return keywordTitle !== -1 || keywordDes !== -1;
+      });
+    }
 
     return <div>{this.listItem(items)}</div>;
   }
@@ -67,7 +71,7 @@ class LostTable extends Component {
 const mapStateToProp = state => {
   return {
     // cityList: state.cityList,
-    selectCity: state.selectCity,
+    filterLost: state.filterLost,
     lostList: state.lostList,
     clickCategory: state.clickCategory
   };

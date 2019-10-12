@@ -72,7 +72,7 @@
       "lost_title": "wallet4",
       "lost_description": "hom nay toi buon qua, can duoc di rong choi",
       "lost_image": "https://cdn.pixabay.com/photo/2015/03/26/09/54/pug-690566_960_720.jpg",
-      "lost_city": "vung tau",
+      "lost_city": "hai phong",
       "lost_date_at": "12/2/2019",
       "lost_category": "pet"
     },
@@ -97,7 +97,7 @@
     {
       "lost_id": 7,
       "lost_title": "wallet7",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_description": "own state and update it based on user input. In React, mutable state is typically kept in the state property of components",
       "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
       "lost_city": "ha noi",
       "lost_date_at": "12/2/2019",
@@ -106,7 +106,7 @@
     {
       "lost_id": 8,
       "lost_title": "wallet7",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_description": "own state and update it based on user input. In React, mutable state is typically kept in the state property of components",
       "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
       "lost_city": "nha trang",
       "lost_date_at": "12/2/2019",
@@ -115,9 +115,9 @@
     {
       "lost_id": 9,
       "lost_title": "wallet7",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_description": "if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:",
       "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
-      "lost_city": "da nang",
+      "lost_city": "da lat",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     }
