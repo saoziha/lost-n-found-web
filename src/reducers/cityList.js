@@ -8,9 +8,8 @@ const cityList = (state = initialState, action) => {
     case (actionTypes.FETCH_CITY):
       state = action.data_city;
       return state;
-
     default:
-      return [...state]
+      return state
   }
 };
 

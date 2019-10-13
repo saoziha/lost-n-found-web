@@ -59,11 +59,15 @@ code {
 }
 .slt-option{
   background-color: rgb(39, 41, 61);
+  text-transform: capitalize;
 }
 
 .icon-section{
   position: relative;
   top: -2px;
   font-weight: bold;
+}
+.dropdown-toggle:after{
+  content: none !important;
 }
 

@@ -1,13 +1,20 @@
 import * as actionTypes from '../contants/actionsTypes';
 
-const initialState =[];
+const initialState = {
+  dataItem: [],
+  id_city : '',
+};
 
-const lostList = (state = initialState, action)=>{
+const lostList = (state = initialState, action) => {
+
   switch (action.type) {
     case (actionTypes.FETCH_LOST_LIST):
-      state = action.lostList;
-      return [...state];
-    default: return [...state];
+      state.dataItem = action.lostList;
+      return {...state};
+    default:
+      return state;
+
+
   }
 };
 
