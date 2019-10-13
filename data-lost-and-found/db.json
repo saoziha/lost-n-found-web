@@ -1,123 +1,122 @@
 {
-  "data-city" : [
+  "data-city": [
     {
-      "city_id" : 1,
-      "city_name" : "ho chi minh"
+      "city_id": 1,
+      "city_name": "hồ chí minh"
     },
     {
-      "city_id" : 2,
-      "city_name" : "ha noi"
+      "city_id": 2,
+      "city_name": "hà nội"
     },
     {
-      "city_id" : 3,
-      "city_name" : "hai phong"
+      "city_id": 3,
+      "city_name": "hải phòng"
     },
     {
-      "city_id" : 4,
-      "city_name" : "nha trang"
+      "city_id": 4,
+      "city_name": "nha trang"
     },
     {
-      "city_id" : 5,
-      "city_name" : "da lat"
+      "city_id": 5,
+      "city_name": "đà lạt"
     },
     {
-      "city_id" : 6,
-      "city_name" : "vung tau"
+      "city_id": 6,
+      "city_name": "vũng tàu"
     },
     {
-      "city_id" : 7,
-      "city_name" : "da nang"
+      "city_id": 7,
+      "city_name": "đà nẵng"
     }
-
   ],
   "data-lost-list": [
     {
       "lost_id": 0,
-      "lost_title": "wallet0",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "http://baovinhphuc.com.vn/thumbnail/550/exif_temp_image-1jpeg.jpg?url=Storage/Images/2019/3/28/exif_temp_image-1jpeg.jpg",
-      "lost_city": "da nang",
+      "lost_title": "Chó của tôi bị lạc",
+      "lost_description": "Mất chó tại khu vực Thanh Khê",
+      "lost_image": "https://sieupet.com/wp-content/uploads/2018/09/cho-con-nghe-loi.jpg",
+      "lost_city": "đà nẵng",
       "lost_date_at": "12/2/2019",
       "lost_category": "pet"
     },
     {
       "lost_id": 1,
-      "lost_title": "wallet1",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "http://baovinhphuc.com.vn/thumbnail/550/exif_temp_image-1jpeg.jpg?url=Storage/Images/2019/3/28/exif_temp_image-1jpeg.jpg",
-      "lost_city": "ho chi minh",
+      "lost_title": "Mất con",
+      "lost_description": "Con tôi đi lạc ở chợ bến thành",
+      "lost_image": "https://vinmec-prod.s3.amazonaws.com/images/20190117_104148_757474_tre_em_tao_bon.max-800x800.jpg",
+      "lost_city": "hồ chí minh",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     },
     {
       "lost_id": 2,
-      "lost_title": "wallet2",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "https://cdn.pixabay.com/photo/2017/11/04/22/18/dog-2919014_960_720.jpg",
-      "lost_city": "ha noi",
+      "lost_title": "Cha tôi đi lạc",
+      "lost_description": "cha tôi đi 3 ngày chưa về",
+      "lost_image": "https://photo-2-baomoi.zadn.vn/w1000_r1/2018_11_25_17_28724107/d992ee4cce0d27537e1c.jpg",
+      "lost_city": "hà nội",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     },
     {
       "lost_id": 3,
-      "lost_title": "wallet3",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "https://cdn.pixabay.com/photo/2017/11/04/22/18/dog-2919014_960_720.jpg",
+      "lost_title": "Mất ví",
+      "lost_description": "Mất ví gần bờ biển",
+      "lost_image": "https://www.lazio.vn/wp-content/uploads/2018/04/vi-da-bo-handmake-715-lazio-2-1.jpg",
       "lost_city": "nha trang",
       "lost_date_at": "12/2/2019",
       "lost_category": "stuff"
     },
     {
       "lost_id": 4,
-      "lost_title": "wallet4",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "https://cdn.pixabay.com/photo/2015/03/26/09/54/pug-690566_960_720.jpg",
-      "lost_city": "hai phong",
+      "lost_title": "Mất mèo",
+      "lost_description": "Mèo cuẩ tôi bị mất tích hôm qua",
+      "lost_image": "https://azpet.com.vn/wp-content/uploads/2019/08/mobile-meo-anh.jpg",
+      "lost_city": "hải phòng",
       "lost_date_at": "12/2/2019",
       "lost_category": "pet"
     },
     {
       "lost_id": 5,
-      "lost_title": "wallet5",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
+      "lost_title": "Lạc cha",
+      "lost_description": "cha tôi đi 3 ngày chưa về",
       "lost_image": "https://cdn.pixabay.com/photo/2015/11/17/13/13/bulldog-1047518_960_720.jpg",
-      "lost_city": "ha noi",
+      "lost_city": "hà nội",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     },
     {
       "lost_id": 6,
-      "lost_title": "wallet6",
-      "lost_description": "hom nay toi buon qua, can duoc di rong choi",
-      "lost_image": "https://cdn.pixabay.com/photo/2015/11/17/13/13/bulldog-1047518_960_720.jpg",
-      "lost_city": "vung tau",
+      "lost_title": "Lạc mẹ",
+      "lost_description": "Cháu bị lạc mẹ 2 ngày nay",
+      "lost_image": "https://suythan.net/wp-content/uploads/2017/04/benh-than-da-nang-o-tre-em.jpg",
+      "lost_city": "vũng tàu",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     },
     {
       "lost_id": 7,
-      "lost_title": "wallet7",
-      "lost_description": "own state and update it based on user input. In React, mutable state is typically kept in the state property of components",
-      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
-      "lost_city": "ha noi",
+      "lost_title": "Mất ví",
+      "lost_description": "Mất ví khu vực Ba đình",
+      "lost_image": "https://www.lazio.vn/wp-content/uploads/2018/04/vi-da-bo-handmake-715-lazio-2-1.jpg",
+      "lost_city": "hà nội",
       "lost_date_at": "12/2/2019",
-      "lost_category": "person"
+      "lost_category": "stuff"
     },
     {
       "lost_id": 8,
-      "lost_title": "wallet7",
-      "lost_description": "own state and update it based on user input. In React, mutable state is typically kept in the state property of components",
-      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
+      "lost_title": "Mất ví",
+      "lost_description": "Mất ví khu vực gần vinpear",
+      "lost_image": "http://www.dabaoha.com/wp-content/uploads/2017/10/V%C3%AD-da-nam-si%C3%AAu-m%E1%BB%8Fng-BHM8146-2.jpg",
       "lost_city": "nha trang",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     },
     {
       "lost_id": 9,
-      "lost_title": "wallet7",
-      "lost_description": "if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:",
-      "lost_image": "https://cdn.pixabay.com/photo/2016/02/26/16/32/dog-1224267_960_720.jpg",
-      "lost_city": "da lat",
+      "lost_title": "Mất con",
+      "lost_description": "Mất con khu vực đà lạt",
+      "lost_image": "https://suythan.net/wp-content/uploads/2017/04/benh-than-da-nang-o-tre-em.jpg",
+      "lost_city": "đà lạt",
       "lost_date_at": "12/2/2019",
       "lost_category": "person"
     }

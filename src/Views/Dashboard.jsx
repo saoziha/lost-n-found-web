@@ -79,7 +79,7 @@ class Dashboard extends React.Component {
           <Row>
             <Col lg="12" md="12" className="wrapped-lost">
               <LostTable />
-              <Detail />
+              {/* <Detail /> */}
             </Col>
           </Row>
         </div>

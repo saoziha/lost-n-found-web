@@ -13,7 +13,7 @@ export default class componentName extends Component {
                 <CardTitle className="item-title">Help! I lost my son</CardTitle>
               </CardHeader>
               <CardBody>
-                <CardImg src="http://localhost:3000/assets/img/anime3.png" />
+                <CardImg src="" />
                 <CardText>
                   Lorem ipsum dolor sit amet, aenean sed at sit sed at, arcu aenean placerat vivamus enim, fusce integer
                   praesent auctor justo nam, vitae suspendisse parturient, mauris qui suspendisse erat erat aenean.

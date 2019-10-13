@@ -1,24 +1,23 @@
-import React, {Component, Fragment} from 'react';
-import {Button, Card, CardBody, CardFooter, CardHeader, Col, FormGroup, Input, Label, Row} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Card, CardBody, CardFooter, CardHeader, Col, FormGroup, Input, Label, Row } from 'reactstrap';
 import 'date-fns';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
-import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider,} from '@material-ui/pickers';
+import { KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedDate: new Date()
-    }
+    };
   }
 
-  handleDateChange = (date) => {
+  handleDateChange = date => {
     this.setState({
       selectedDate: date
-    })
+    });
   };
-
 
   render() {
     return (
@@ -34,33 +33,21 @@ class Post extends Component {
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>
-                          Title
-                        </label>
-                        <Input
-                          required
-                          placeholder="Your Home Address"
-                          type="text"
-                        />
+                        <label>Title</label>
+                        <Input required placeholder="Your Home Address" type="text" />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>
-                          Area
-                        </label>
-                        <Input
-                          required
-                          placeholder="Your Home Address"
-                          type="select"
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                        <label>City</label>
+                        <Input required placeholder="Your Home Address" type="select">
+                          <option>Da Nang</option>
+                          <option>Ho Chi Minh</option>
+                          <option>Da Lat</option>
+                          <option>Nha Trang</option>
+                          <option>Ha Noi</option>
                         </Input>
                       </FormGroup>
                     </Col>
@@ -68,40 +55,32 @@ class Post extends Component {
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>
-                          Description
-                        </label>
-                        <Input
-                          type="textarea"
-                          name="txtArea"
-                        />
+                        <label>Description</label>
+                        <Input type="textarea" name="txtArea" />
                       </FormGroup>
                     </Col>
                   </Row>
 
                   <Row>
                     <Col md="12">
-                      <label>
-                        Status
-                      </label>
-                      <FormGroup className="d-flex">
+                      <label>Status</label>
+                      <FormGroup className="d-flex justify-content-around">
                         <div className="form-check-radio pl-md-4">
                           <Label className="form-check-label">
-                            <Input type="radio"
-                                   name="exampleRadios"
-                                   id="exampleRadios1"
-                                   value="sltLost"
-                                   defaultChecked/>
+                            <Input
+                              type="radio"
+                              name="exampleRadios"
+                              id="exampleRadios1"
+                              value="sltLost"
+                              defaultChecked
+                            />
                             Lost
                             <span className="form-check-sign check-sign-lost"> </span>
                           </Label>
                         </div>
-                        <div className="form-check-radio pl-md-5">
+                        <div className="form-check-radio pl-md-4">
                           <Label className="form-check-label">
-                            <Input type="radio"
-                                   name="exampleRadios"
-                                   id="exampleRadios2"
-                                   value="sltFound"/>
+                            <Input type="radio" name="exampleRadios" id="exampleRadios2" value="sltFound" />
                             Found
                             <span className="form-check-sign check-sign-found"> </span>
                           </Label>
@@ -111,13 +90,10 @@ class Post extends Component {
                   </Row>
                   <Row>
                     <Col md="12">
-                      <label>
-                        Time
-                      </label>
+                      <label>Time</label>
                       <FormGroup>
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                          <Grid container
-                                justify="space-around">
+                          <Grid container justify="space-around">
                             <KeyboardDatePicker
                               disableToolbar
                               variant="inline"
@@ -128,7 +104,7 @@ class Post extends Component {
                               value={this.state.selectedDate}
                               onChange={this.handleDateChange}
                               KeyboardButtonProps={{
-                                'aria-label': 'change date',
+                                'aria-label': 'change date'
                               }}
                             />
                             <KeyboardTimePicker
@@ -138,7 +114,7 @@ class Post extends Component {
                               value={this.state.selectedDate}
                               onChange={this.handleDateChange}
                               KeyboardButtonProps={{
-                                'aria-label': 'change time',
+                                'aria-label': 'change time'
                               }}
                             />
                           </Grid>
@@ -148,11 +124,7 @@ class Post extends Component {
                   </Row>
                 </CardBody>
                 <CardFooter>
-                  <Button
-                    className="btn-fill"
-                    color="info"
-                    type="submit"
-                  >
+                  <Button className="btn-fill" color="info" type="submit">
                     Post
                   </Button>
                 </CardFooter>

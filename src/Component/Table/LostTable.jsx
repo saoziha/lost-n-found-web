@@ -11,13 +11,14 @@ class LostTable extends Component {
   }
 
   componentDidMount() {
-    // this.props.actionFetchLostList();
+    this.props.actionFetchLostList();
   }
 
   listItem = listLost => {
     let result = null;
     if (listLost.length > 0) {
       result = listLost.map(data_lost => {
+        console.log(data_lost);
         return (
           <LostItem
             key={data_lost.lost_id}
@@ -48,9 +49,9 @@ class LostTable extends Component {
     }
 
     //search lost follow category
-    if (clickCategory.name_category) {
+    if (filterLost.category) {
       items = items.filter(lost => {
-        let filterCategory = lost.lost_category.toLowerCase().indexOf(clickCategory.name_category.toLowerCase());
+        let filterCategory = lost.lost_category.toLowerCase().indexOf(filterLost.category.toLowerCase());
         return filterCategory !== -1;
       });
     }
@@ -79,9 +80,9 @@ const mapStateToProp = state => {
 
 const mapDispatchToProp = dispatch => {
   return {
-    // actionFetchLostList: () => {
-    //   dispatch(actions.actionFetchLostList());
-    // }
+    actionFetchLostList: () => {
+      dispatch(actions.actionFetchLostList());
+    }
   };
 };
 
