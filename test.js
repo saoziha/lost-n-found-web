@@ -1,1 +1,1 @@
-var abc = '';
+var abc = 'a';
