@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Badge, Card, CardBody, CardFooter, CardHeader, CardImg, CardText, CardTitle, Col } from 'reactstrap';
 
 class LostItem extends Component {
   filterCategory = category => {
