@@ -76,7 +76,4 @@ const mapDispatchToProp = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProp,
-  mapDispatchToProp
-)(ListCity);
+export default connect(mapStateToProp, mapDispatchToProp)(ListCity);
