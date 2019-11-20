@@ -1,7 +1,5 @@
 image: node:latest
 
-on: [push]
-
 stages:
   - build
   - test
