@@ -51,20 +51,20 @@ export default class Login extends Component {
   };
 
   render() {
-    let fbContent;
-    if (this.state.isLoggedIn) {
-      fbContent = '';
-    } else {
-      fbContent = (
-        <FacebookLogin
-          appId="440317406588918"
-          autoLoad={true}
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.responseFacebook}
-        />
-      );
-    }
+    // let fbContent;
+    // if (this.state.isLoggedIn) {
+    //   fbContent = '';
+    // } else {
+    //   fbContent = (
+    //     <FacebookLogin
+    //       appId="440317406588918"
+    //       autoLoad={true}
+    //       fields="name,email,picture"
+    //       onClick={this.componentClicked}
+    //       callback={this.responseFacebook}
+    //     />
+    //   );
+    // }
 
     return (
       <div className="login">
@@ -80,7 +80,7 @@ export default class Login extends Component {
           </div>
           <input type="button" onClick={this.getApi} className="btn-login" name="" value="SIGN IN" />
         </form>
-        <div className="facebook-login">{fbContent}</div>
+        {/* <div className="facebook-login">{fbContent}</div> */}
       </div>
     );
   }
