@@ -40,9 +40,9 @@ class AdminPage extends Component {
   }
 
   componentDidUpdate(e) {
-    if (e.history.action === "PUSH") {
-      if (navigator.platform.indexOf("Win") > -1) {
-        let tables = document.querySelectorAll(".table-responsive");
+    if (e.history.action === 'PUSH') {
+      if (navigator.platform.indexOf('Win') > -1) {
+        let tables = document.querySelectorAll('.table-responsive');
         for (let i = 0; i < tables.length; i++) {
           ps = new PerfectScrollbar(tables[i]);
         }
@@ -52,7 +52,6 @@ class AdminPage extends Component {
       this.refs.mainPanel.scrollTop = 0;
     }
   }
-
 
   // this function opens and closes the sidebar on small devices
   toggleSidebar = () => {

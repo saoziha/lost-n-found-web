@@ -3,11 +3,11 @@ import React, { Fragment } from 'react';
 // import classNames from 'classnames';
 // react plugin used to create charts
 // reactstrap components
-import { Alert, Button, Card, CardHeader, Col, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Alert, Card, CardHeader, Col, FormGroup, Label, Row } from 'reactstrap';
 import LostTable from '../Component/Table/LostTable';
 import ListCity from '../Component/ListCity/ListCity';
 import Category from '../Component/Category/Category';
-import Detail from '../Component/Detail/Detail';
+
 import Search from '../Component/Search/Search';
 
 // core components

@@ -36,7 +36,7 @@ class LostTable extends Component {
   };
 
   render() {
-    let { filterLost, lostList, clickCategory } = this.props;
+    let { filterLost, lostList } = this.props;
 
     let items = [...lostList.dataItem];
 
@@ -86,7 +86,4 @@ const mapDispatchToProp = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProp,
-  mapDispatchToProp
-)(LostTable);
+export default connect(mapStateToProp, mapDispatchToProp)(LostTable);
